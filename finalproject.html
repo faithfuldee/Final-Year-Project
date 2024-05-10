@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Fitness Website: Gumnazo</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+<!-- Font awesome cdn link  -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+:root{
+    --main-color: #c133ff;
+    --black: #000;
+    --light-color: #868e96;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+::selection{
+    background: var(--main-color);
+    color: #fff;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+}
+
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: #fafafa;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+    border-radius: 5rem;
+}
+
+section{
+    padding: 2rem 9%;
+}
+
+.heading{
+    font-size: 4rem;
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    color: var(--black);
+    text-transform: uppercase;
+}
+
+.heading span{
+    text-transform: uppercase;
+    color: var(--main-color);
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    font-size: 1.7rem;
+    background: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--main-color);
+}
+
+.btn:hover{
+    background: var(--main-color);
+    color: #fff;
+    letter-spacing: .1rem;
+}
+
+
+/* ---------------------------------------------- header section starts -------------------------  */
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 3rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255,255,255,.1);
+    box-shadow: 0rem .1rem .5rem rgba(0,0,0,.1);
+}
+
+.header .logo{
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}
+
+.header .logo span{
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+
+.header .navbar a{
+    font-size: 1.7rem;
+    color: #fff;
+    margin: 0 1rem;
+}
+
+.header .navbar a:hover{
+    color: var(--main-color);
+}
+
+.header .icons div{
+    font-size: 2.5rem;
+    color: #222;
+    padding: .5rem;
+    cursor: pointer;
+    margin-left: 1rem;
+    color: #fff;
+}
+
+.header .icons div:hover{
+    transform: rotate(180deg);
+}
+
+#menu-btn{
+    display: none;
+}
+
+.header .icons a{
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+    color: #fff;
+    background: var(--main-color);
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: .8rem 2rem;
+    border: none;
+}
+
+.header .icons div:hover{
+    color: var(--main-color);
+}
+
+.header .icons a:hover{
+    color: var(--main-color);
+    background: #fff;
+}
+
+.header.header.active{
+    padding: 2rem 9%;
+    background: rgba(0,0,0,.9);
+}
+
+/* ---------------------------------------------- header section ends -------------------------  */
+
+/* ----------------------------------------------- home section starts ------------------------  */
+
+.home{
+    padding: 0;
+}
+
+.home .home-slider .box{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+.home .home-slider .box .content{
+    text-align: center;
+    max-width: 70rem;
+}
+
+.home .home-slider .box .content h3{
+    font-size: 5rem;
+    color: #fff;
+    text-transform: uppercase;
+    /*transition-delay: .2s;*/
+}
+
+.home .home-slider .box .content p{
+    font-size: 1.7rem;
+    color: #eee;
+    /*transition-delay: .4s;*/
+    padding: 1rem ;
+}
+
+.home .home-slider .box .content .button .btn-1{
+    background: var(--main-color);
+    color: #fff;
+    margin-right: .5rem;
+}
+
+
+
+/* ----------------------------------------------- home section ends ------------------------  */
+
+/* --------------------------------------------- feature section starts ------------------------   */
+
+.feature .feature-slider{
+    padding-bottom: 4rem;
+}
+
+.feature .feature-slider .box{
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.feature .feature-slider .box .image{
+    height: 40rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.feature .feature-slider .box .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.feature .feature-slider .box:hover .image img{
+    transform: scale(1.2);
+}
+
+.feature .feature-slider .box:hover .content .price{
+    background: none;
+    border: .3rem solid #fff;
+}
+
+.feature .feature-slider .box .content{
+    padding: 1rem 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    align-items: center;
+}
+
+.feature .feature-slider .box .content h3{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    background: rgba(0,0,0,.3);
+    padding: .2rem;
+    margin-top: .5rem;
+}
+
+.feature .feature-slider .box .content .price{
+    width: 10rem;
+    height: 10rem;
+    line-height: 10rem;
+    border-radius: 50%;
+    text-align: center;
+    margin: auto;
+    background: var(--main-color);
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #fff;
+}
+
+/* --------------------------------------------- feature section ends ------------------------   */
+
+/* -------------------------------------------- schedule section starts ---------------------------  */
+
+.schedule{
+    background: #eee;
+}
+
+.schedule .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+}
+
+.schedule .box-container .box .content{
+    padding: 2rem;
+}
+
+.schedule .box-container .box .content h3{
+    font-size: 2rem;
+    font-weight: 500;
+    padding-bottom: .5rem;
+}
+
+.schedule .box-container .box .content p{
+    color: #333;
+    font-size: 1.5rem;
+    line-height: 1.8;
+}
+
+.schedule .box-container .box .icons{
+    padding: 0 2rem;
+}
+
+.schedule .box-container .box .icons span{
+    display: block;
+    font-size: 1.3rem;
+    color: #333;
+    padding: .3rem 0;
+}
+
+.schedule .box-container .box .icons span i{
+    margin-right: .5rem;
+}
+
+.schedule .box-container .box .btn{
+   margin: 1.5rem 2rem;
+   background: var(--main-color);
+   color: #fff;
+}
+
+.schedule .box-container .box .btn:hover{
+    background: #f66a97;
+}
+
+.schedule .box-container .box{
+    background: #fff;
+    overflow: hidden;
+}
+
+.schedule .box-container .box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* -------------------------------------------- schedule section ends ---------------------------  */
+
+/* ----------------------------------------- trainers section starts ----------------------------  */
+.trainer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+    padding: 7rem 0;
+}
+
+.trainer .box-container .box{
+    padding: 2rem;
+    position: relative;
+    text-align: center;
+    background: #b77ebd;
+    box-shadow: 0 .1rem .5rem rgba(0,0,0,.1);
+    border-radius: .5rem;
+}
+
+.trainer .box-container .box:hover{
+    transform: translateY(-10%);
+    transition: .3s linear;
+    background: #f5f1f1;
+    border: .2rem solid #c287d1;
+}
+
+.trainer .box-container .box .image{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5rem;
+}
+
+.trainer .box-container .image img{
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    top: -6rem;
+}
+
+.trainer .box-container .name{
+    padding: 1rem 0;
+} 
+
+.trainer .box-container .name h1{
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.trainer .box-container .name p{
+    color: #222;
+    font-size: 1.3rem;
+}
+
+.trainer .box-container .name p span{
+    text-transform: none;
+}
+
+.trainer .box-container .box p{
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 100;
+    line-height: 1.8;
+} 
+
+
+/* ----------------------------------------- trainers section ends ----------------------------  */
+
+/* ------------------------------------------- testimonial section starts --------------------  */
+
+.testimonial .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+    padding: 7rem 0;
+}
+
+.testimonial .box-container .box{
+    padding: 2rem;
+    position: relative;
+    text-align: center;
+    background: #fafafa;
+    box-shadow: 0 .1rem .5rem rgba(0,0,0,.1);
+    border-radius: .5rem;
+}
+
+.testimonial .box-container .box:hover{
+    transform: translateY(-10%);
+    transition: .3s linear;
+    background: #fff;
+    border: .2rem solid #f8f8a1;
+}
+
+.testimonial .box-container .box .image{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5rem;
+}
+
+.testimonial .box-container .image img{
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    top: -6rem;
+}
+
+.testimonial .box-container .name{
+    padding: 1rem 0;
+} 
+
+.testimonial .box-container .name h1{
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.testimonial .box-container .name p{
+    color: #222;
+    font-size: 1.3rem;
+}
+
+.testimonial .box-container .name p span{
+    text-transform: none;
+}
+
+.testimonial .box-container .box p{
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 400;
+    line-height: 1.8;
+} 
+
+/* ------------------------------------------- testimonial section ends --------------------  */
+
+
+/* -------------------------------------------- blogs section starts ---------------------  */
+
+.blogs .blogs-slider{
+    padding-bottom: 4rem;
+}
+
+.blogs .blogs-slider .box{
+    position: relative;
+    overflow: hidden;
+    margin: 1rem 0;
+    background: #fafafa;
+    box-shadow: 0 .5rem .5rem rgba(0,0,0,.3);
+}
+
+.blogs .blogs-slider .box .image{
+    height: 40rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.blogs .blogs-slider .box .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.blogs .blogs-slider .box:hover .image img{
+    transform: scale(1.2);
+}
+
+.blogs .blogs-slider .box .content{
+    padding: 2rem;
+    padding-bottom: 1rem;
+}
+
+.blogs .blogs-slider .box .content h3{
+    font-size: 2rem;
+    color: var(--black);
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+
+.blogs .blogs-slider .box .content span{
+    font-size: 1.3rem;
+    color: #808080;
+}
+
+.blogs .blogs-slider .box .content span i{
+    margin-right: .5rem;
+    color: var(--main-color);
+}
+
+.blogs .blogs-slider .box .content p{
+    padding-top: 1rem;
+    color: #808080;
+    font-size: 1.5rem;
+    line-height: 1.8;
+}
+
+.blogs .blogs-slider .box .button{
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.blogs .blogs-slider .box .btn{
+    background: var(--main-color);
+    color: #fff;
+}
+
+/* -------------------------------------------- blogs section ends ---------------------  */
+
+/* --------------------------------------------- footer section starts ----------------------  */
+
+.footer{
+    background: #222;
+}
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(35rem , 1fr));
+    gap: 1.5rem;
+}
+
+.footer .box-container .box{
+    padding: 2rem;
+}
+
+.footer .box-container .box h1{
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: 600;
+    padding-bottom: 1rem;
+}
+
+.footer .box-container .box .text{
+    color: #eee;
+    font-size: 1.3rem;
+    font-weight: normal;
+    line-height: 1.8;
+    padding-bottom: 1rem;
+}
+
+.footer .box-container .box .icon{
+    padding: 1rem 0;
+}
+
+.footer .box-container .box .icon a i{
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    background: var(--main-color);
+    text-align: center;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 0 .5rem;
+    color: #fff;
+}
+
+.footer .box-container .box .icon a i:hover{
+    color: var(--main-color);
+    background: none;
+    border: .2rem solid var(--main-color);
+}
+
+.footer .box-container .box .icons a{
+    display: block;
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.footer .box-container .box .icons a i{
+    margin-right: .5rem;
+    color: var(--main-color);
+}
+
+.footer .box-container .box .icons a:hover i{
+    padding-right: 2rem;
+    color: #fff;
+}
+
+.footer .box-container .box .icons a:hover{
+    color: var(--main-color);
+}
+
+.footer .credit{
+    padding: 3rem 0;
+    text-align: center;
+    border-top: .1rem solid #808080;
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #eee;
+}
+
+.footer .credit span{
+    color: var(--main-color);
+}
+
+/* --------------------------------------------- footer section ends ----------------------  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------- media quries starts -------------------- */
+
+
+@media (max-width: 991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding: 2rem;
+    }
+
+    .header.header.active{
+        padding: 2rem;
+    }
+
+    section{
+        padding: 2rem;
+    }
+
+}
+
+/* ------------------- for max-width 768px ------------------  */
+
+@media (max-width: 768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: rgba(0,0,0,.9);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        border-top: .1rem solid #eee;
+    }
+
+    .header .navbar.active{
+        clip-path: polygon(0 0,100% 0, 100% 100%, 0 100%);
+    }
+
+    .header .navbar a{
+        display: block;
+        margin: 2rem;
+        font-size: 2rem;
+    }
+
+    .feature .feature-slider .box .content h3{
+        padding: 1rem;
+    }
+
+    .testimonial .box-container{
+        padding: 1rem 0;
+    }
+
+    .testimonial .box-container .box{
+        margin-top: 3rem;
+    }
+
+}
+
+/* ------------------- for max-width 450px ------------------  */
+
+@media (max-width: 450px){
+
+    html{
+        font-size: 50%;
+    }
+
+    .header .icons a{
+        letter-spacing: none;
+        font-size: 1.3rem;
+        padding: 1rem;
+    }
+
+}
+</style>
+<body>
+
+    <!-- header section starts  -->
+
+    <header class="header">
+        
+        <a href="#" class="logo">GUMN<span>ANZO</span></a>
+
+        <nav class="navbar">
+            <a href="#">home</a>
+            <a href="#">about</a>
+            <a href="#">services</a>
+            <a href="#">news</a>
+            <a href="#">contact</a>
+        </nav>
+
+
+        <div class="icons">
+            <a href="registration.html" class="btn">Become a memeber</a>
+            <div id="menu-btn" class="fas fa-bars"> </div>
+       
+        </div>
+
+    </header>   
+
+    <!-- header section ends  -->
+
+    <!-- home section starts  -->
+
+    <section class="home">
+
+        <div class="swiper home-slider">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide box" style="background:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),
+                 url('images/picture\ 1.jpg');">
+
+                    <div class="content">
+                        <h3>Join Gumnazo today</h3>
+                        <p>Healthy Mind Healthy Body</p>
+                        <div class="button">
+                            <a href="#" class="btn btn-1">Get Started</a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- home section ends  -->
+
+    <!-- featured section starts  -->
+
+    <section class="feature">
+
+        <h1 class="heading"> Featured <span>Classes</span></h1>
+
+        <div class="swiper feature-slider">
+
+            <!-- <div class="swiper-wrapper"> -->
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src='images/picture 3.jpg' alt="">
+                    </div>
+                    <div class="content">
+                        <div class="price">£39.99</div>
+                        <h3>Cycle Spin</h3>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src='images/picture 4.jpg' alt="">
+                    </div>
+                    <div class="content">
+                        <div class="price">£39.99</div>
+                        <h3>Cardio Hiit</h3>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src='images/picture 5.jpg' alt="">
+                    </div>
+                    <div class="content">
+                        <div class="price">£39.99</div>
+                        <h3>Cardio Trax</h3>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src='images/picture 6.jpg' alt="">
+                    </div>
+                    <div class="content">
+                        <div class="price">£39.99</div>
+                        <h3>Dynamno Shred</h3>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- featured section ends  -->
+
+    <!-- Schedule section starts  -->
+
+    <section class="schedule">
+
+        <h1 class="heading"><span>our</span> schedule</h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <div class="content">
+                    <h3>Cycle Spin</h3>
+                <p> Discover the exhilarating world of spin classes, where pedal power meets pulsating beats.</p>
+                </div>
+                <div class="icons">
+                    <span><i class="far fa-clock"></i> 5:30 PM</span>
+                    <span><i class="fad fa-calendar-alt"></i>June 22, 2024</span>
+                </div>
+                <a href="#" class="btn">Join Form £15</a>
+            </div>
+            
+            <div class="box">
+                <img src='images/cycle 2.jpg'  alt="">
+            </div>
+
+            <div class="box">
+                <div class="content">
+                    <h3>Carido Hiit</h3>
+            <p>Have you ever wondered what a HIIT is? Well, here's your answer: HIIT stands for high intensity interval training.</p>
+                </div>
+                <div class="icons">
+                    <span><i class="far fa-clock"></i> 5:30 PM</span>
+                    <span><i class="fad fa-calendar-alt"></i>June 22, 2024</span>
+                </div>
+                <a href="#" class="btn">Join Form £15</a>
+            </div>
+
+            <div class="box">
+                <img src='images/picture 10.jpg' alt="">
+            </div>
+
+            <div class="box">
+                <img src='images/picture 11.jpg 'alt="">
+            </div>
+
+            <div class="box">
+                <div class="content">
+                    <h3>Dynamno Shred</h3>
+                    <p>To start you'll receive a warm up rountie with coach on each of the lifts included in the class.</p>
+                </div>
+                <div class="icons">
+                    <span><i class="far fa-clock"></i> 5:30 PM</span>
+                    <span><i class="fad fa-calendar-alt"></i>June 22, 2024</span>
+                </div>
+                <a href="#" class="btn">Join Form £15</a>
+            </div>
+
+            <div class="box">
+                <img src='images/picture 2.jpg' alt="">
+            </div>
+
+            <div class="box">
+                <div class="content">
+                    <h3>Cardio Trax</h3>
+          <p>Trax is a high-intesity session which helps improve strength and increases aerobic capacity, helping you live your life better.</p>
+                </div>
+                <div class="icons">
+                    <span><i class="far fa-clock"></i> 5:30 PM</span>
+                    <span><i class="fad fa-calendar-alt"></i>June 22, 2024</span>
+                </div>
+                <a href="#" class="btn">Join Form £15</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Schedule section ends  -->
+
+    <!-- trainer section starts  -->
+
+    <section class="trainer">
+
+         <h1 class="heading">Personal <span>trainers</span></h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <div class="image">
+                    <img src='images/trainer 4.jpg' alt="">
+                </div>
+                <div class="name">
+                    <h1>Hannah Kharis</h1>
+                    <p>Every workout is a win,
+                    Keep pushing and rise higher!my mission is to guide and inspire you towards a healthier, stronger and more confident version of yourself.</p>
+                </div>
+              
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src='images/trainer 1.jpg' alt="">
+                </div>
+                <div class="name">
+                    <h1>Mary Joseph</h1>
+                <p>My main mission is to work with you to implement effective and realistic; Nutrition, lifestyle & fitness plans.
+
+                    I’m a very enthusiastic person with a bright soul & a high energy to keep you feeling supported throughout your traini</p>
+                </div>
+                <p></p>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src='images/trainer 6.jpg' alt="">
+                </div>
+                <div class="name">
+                    <h1>Paul Saul</h1>
+                    
+                </div>
+                <p>My goal is to empower both men and women to feel confident within themself !
+                    I plan to take my clients taking on fitness journeys that leave them loving life and the reflections..</p>
+            </div>
+       
+    </section>
+
+    <!-- trainer section ends  -->
+
+    <!-- testimonial section starts  -->
+
+    <section class="testimonial">
+
+        <h1 class="heading">testimonial</h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <div class="image">
+                    <img src='images/testimony 3.jpg' alt="">
+                </div>
+                <div class="name">
+                    <h1>Moses Aaron</h1>
+                    <p></p>
+                </div>
+                <p>This was a 10/10 expereince, I absoultely loved it and I will definely be coming back again.</p>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src='images/testimony 1.jpeg' alt="">
+                </div>
+                <div class="name">
+                    <h1>Peter Barnabas</h1>
+                    <p></p>
+                </div>
+                <p>There were a couple challenges I had faced, but thanks to my personal trainer Mary Joseph I was able to overcome my challenges. I feel more confident and feel like an can overcome anything!</p>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src='images/testimony.jpg' alt="">
+                </div>
+                <div class="name">
+                    <h1>John Mark</h1>
+                    <p> </p>
+                </div>
+                <p>Such a lovely enironment to be in, the community is amazing it helps focus on you mind and body!</p>
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <!-- testimonial section ends  -->
+
+    <!-- blogs section starts  -->
+
+    <section class="blogs">
+
+        <h1 class="heading">our <span>blogs</span></h1>
+
+        <div class="swiper blogs-slider">
+
+            <div class="swiper-wrapper">
+
+                
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src='images/blog.jpg' alt="">
+                    </div>
+                    <div class="content">
+                        <h3>HIIT Workouts You Can Do At Home</h3>
+                        <span><i class="fad fa-calendar-alt"></i>april 22, 2021</span>
+                        <p>an effective and convenient training approach for increasing fitness and burning calories, but it’s also a flexible workout style that you can do both at the gym and at home...</p>
+                    </div>
+                    <div class="button">
+                        <a href="#" class="btn">Read more</a>
+                    </div>
+                </div>
+
+                
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src='images/food.jpg' alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Natural Ways To Boost Your Immune System</h3>
+                        <span><i class="fad fa-calendar-alt"></i>June 22, 2024</span>
+                        <p>Your immune system comprises several biological processes that detect and protect again pathogens...</p>
+                    </div>
+                    <div class="button">
+                        <a href="#" class="btn">Read more</a>
+                    </div>
+                </div>
+
+              
+                <div class="box">
+                    <div class="image">
+                        <img src='images/blog 2.jpg ' alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Top 5 Core Exercises For Beginners</h3>
+                        <span><i class="fad fa-calendar-alt"></i>June 22, 2024</span>
+                        <p>Having a 6 pack may look great, but for a truly strong core you will also need to train you obliques (the muscles at the side of your abs)...</p>
+                    </div>
+                    <div class="button">
+                        <a href="#" class="btn">Read more</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="image">
+                        <img src='images/blog 3.jpg' alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Full Body Weight Plate Workout</h3>
+                        <span><i class="fad fa-calendar-alt"></i>June 22, 2024</span>
+                        <p>If you're short on time, have limited access to kit, or if the gym is busy, then try this efficient full body workout using just weighted plates...</p>
+                    </div>
+                    <div class="button">
+                        <a href="#" class="btn">Read more</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- blogs section ends  -->
+
+    <!-- footer section starts  -->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h1>about</h1>
+                <div class="text">
+                    <p>At Gumnazo we believe in empowering individuals to achieve their health
+                        and fitness goals through a supprotive community and personalised traing programs.
+                        Our state-of-the-art facilities offer a diverse range of equipment to cater to ever 
+                        fitness need, whether you're a seaosned athlete or just starting your fitness jounery. From cutting-edge cardio
+                    machines to specficalised strength training eqipment, we have everything you need to challenge yourself and see the real results.
+                   </p>
+                </div>
+                <div class="icon">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <h1>contact info</h1>
+                <div class="icons">
+                    <a href="#"><i class="fas fa-map-marker-alt"></i>13 Grace Street, London , United Kingdom </a>
+                    <a href="#"><i class="fas fa-phone-alt"></i>+44 123 4567 8910</a>
+                    <a href="#"><i class="fas fa-envelope"></i>Gumnazo@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <h1>Quick links</h1>
+                <div class="icons">
+                    <a href="#">home</a>
+                    <a href="#">about</a>
+                    <a href="#">services</a>
+                    <a href="#">news</a>
+                    <a href="#">contact</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="credit">created by <span>Denisha Adomako</span> | all right reserved</div>
+
+    </section>
+<script>
+    // For header 
+
+let menu = document.querySelector('#menu-btn');
+let navbar = document.querySelector('.navbar');
+
+menu.onclick = () =>{
+    menu.classList.toggle('fa-times');
+    navbar.classList.toggle('active');
+} 
+
+// for window scroll 
+
+window.onscroll = () =>{
+    menu.classList.remove('fa-times');
+    navbar.classList.remove('active');
+
+    if(window.scrollY > 0){
+        document.querySelector('.header').classList.add('active');
+    }else{
+        document.querySelector('.header').classList.remove('active');
+    }
+
+}
+
+
+window.onload = () =>{
+  if(window.scrollY > 0){
+      document.querySelector('.header').classList.add('active');
+  }else{
+      document.querySelector('.header').classList.remove('active');
+  }
+}
+
+</script>
+</body>
+</html>
